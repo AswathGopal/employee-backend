@@ -6,7 +6,11 @@ const jwt = require('jsonwebtoken')
 const app = express();
 require('dotenv').config();
 const port = 8000;
-app.use(cors())
+app.use(cors({
+     origin:['https://library-management-frontend-ten.vercel.app/'],
+    methods:['GET','POST','PUT','DELETE'],
+    credentials: true
+}))
 // Create MySQL connection
 const connection = mysql.createConnection({
   host: process.env.HOST,
