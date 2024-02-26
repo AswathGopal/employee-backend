@@ -6,11 +6,7 @@ const jwt = require('jsonwebtoken')
 const app = express();
 require('dotenv').config();
 const port = 8000;
-app.use(cors({
-     origin:['http://localhost:3000'],
-    methods:['GET','POST','PUT','DELETE'],
-    credentials: true
-}))
+app.use(cors())
 // Create MySQL connection
 const connection = mysql.createConnection({
   host: process.env.HOST,
